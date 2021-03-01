@@ -3,12 +3,11 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const request = require('request');
 
-const passwordSecurityServe = require('./PasswordSecurity');
-
+const passwordSecurityServer = require('./PasswordSecurity');
 const app = express();
 
 app.get('/test', (req, res) => {
-  res.send('<h1>Hello world</h1>');
+  res.send(passwordSecurityServer.passwordSecurityServer.test());
 });
 
 app.listen(65001, () => {
