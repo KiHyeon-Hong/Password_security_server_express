@@ -15,7 +15,6 @@ app.listen(65001, () => {
 		{url:'https://api.ipify.org'},
 		function(err, response, body) {
 				console.log('server running at ' + body + ':65001');
-
 		}
 	);
 });
