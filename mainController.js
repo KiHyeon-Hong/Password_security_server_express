@@ -6,8 +6,8 @@ const request = require('request');
 const passwordSecurityServer = require('./PasswordSecurity');
 const app = express();
 
-app.get('/test', (req, res) => {
-  res.send(passwordSecurityServer.passwordSecurityServer.test());
+app.get('/Test', (req, res) => {
+  res.send(new passwordSecurityServer.passwordSecurityServer.Test().test());
 });
 
 app.listen(65001, () => {
