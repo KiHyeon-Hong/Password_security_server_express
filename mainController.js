@@ -10,6 +10,10 @@ app.get('/Test', (req, res) => {
   res.send(new passwordSecurityServer.passwordSecurityServer.Test().test());
 });
 
+app.get('/Temp', (req, res) => {
+	res.send("temp code");
+  });
+
 app.listen(65001, () => {
 	request.get(
 		{url:'https://api.ipify.org'},
