@@ -3,7 +3,8 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const request = require('request');
 
-const passwordSecurityServer = require('./PasswordSecurity');
+// const passwordSecurityServer = require('./PasswordSecurity');
+const passwordSecurityServer = require('@kihyeon-hong/password_security_server');
 const app = express();
 
 app.get('/Test', (req, res) => {
