@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const request = require('request');
 
-const passwordSecurityServer = require('./PasswordSecurity');
+const PasswordSecurityServer = require('./PasswordSecurity');
 // const passwordSecurityServer = require('@kihyeon-hong/password_security_server');
 const app = express();
 
@@ -24,20 +24,27 @@ app.get('/download', (req, res, next) => {
 });
 
 app.get('/passwordModelDistributionWeight', (req, res, next) => {
-	const name = 'weights.bin';  
-	res.setHeader('Content-Disposition', `attachment; filename=${name}`); // 이게 핵심 
-	res.sendFile(__dirname + '/weights.bin');
+	const name = 'weights.bin';
+
+	var pwd = new PasswordSecurityServer.PasswordSecurity.PasswordSecurity();
+	console.log(__dirname + '/PasswordSecurity/weights.bin');
+	res.setHeader('Content-Disposition', `attachment; filename=${name}`);
+	res.sendFile(__dirname + '/PasswordSecurity/passwordModel/0.1/weights.bin');
+	// res.sendFile(pwd.passwordModelDistribution() + '/weights.bin');
+	console.log(pwd.passwordModelDistribution() + '/weights.bin');
+	console.log(__dirname + '/PasswordSecurity/passwordModel/0.1/weights.bin');
 });
 
 app.get('/passwordModelDistributionModel', (req, res, next) => {
-	const name = 'weights.bin';  
-	res.setHeader('Content-Disposition', `attachment; filename=${name}`); // 이게 핵심 
-	res.sendFile(__dirname + '/weights.bin');
+	const name = 'model.json';
+
+	res.setHeader('Content-Disposition', `attachment; filename=${name}`);
+	res.sendFile(__dirname + '/PasswordSecurity/passwordModel/0.1/model.json');
 });
 
 app.get('/passwordModelDistributionDict', (req, res, next) => {
 	const name = 'weights.bin';  
-	res.setHeader('Content-Disposition', `attachment; filename=${name}`); // 이게 핵심 
+	res.setHeader('Content-Disposition', `attachment; filename=${name}`);
 	res.sendFile(__dirname + '/weights.bin');
 });
 

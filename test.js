@@ -13,4 +13,4 @@ console.log(pwd.passwordModelVersion());
 console.log(pwd.getLog());
 */
 
-// console.log(pwd.passwordModelTrain());
+console.log(pwd.passwordModelDistribution());
