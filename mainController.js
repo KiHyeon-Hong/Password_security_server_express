@@ -5,34 +5,24 @@ const request = require('request');
 
 const PasswordSecurityServer = require('./PasswordSecurity');
 // const passwordSecurityServer = require('@kihyeon-hong/password_security_server');
+
 const app = express();
+app.use(express.json())
+app.use(bodyParser.urlencoded({ extended: false }))
 
-app.get('/Test', (req, res) => {
-	console.log('request and response test');
-	res.send(new passwordSecurityServer.passwordSecurityServer.Test().test());
-});
-
-app.get('/Temp', (req, res) => {
-	var pwd = new passwordSecurityServer.passwordSecurity.passwordSecurity();
-	res.send(pwd.test());
-});
-
+/*
 app.get('/download', (req, res, next) => {
 	const name = 'weights.bin';  
 	res.setHeader('Content-Disposition', `attachment; filename=${name}`); // 이게 핵심 
 	res.sendFile(__dirname + '/weights.bin');
 });
+*/
 
 app.get('/passwordModelDistributionWeight', (req, res, next) => {
 	const name = 'weights.bin';
 
-	var pwd = new PasswordSecurityServer.PasswordSecurity.PasswordSecurity();
-	console.log(__dirname + '/PasswordSecurity/weights.bin');
 	res.setHeader('Content-Disposition', `attachment; filename=${name}`);
 	res.sendFile(__dirname + '/PasswordSecurity/passwordModel/0.1/weights.bin');
-	// res.sendFile(pwd.passwordModelDistribution() + '/weights.bin');
-	console.log(pwd.passwordModelDistribution() + '/weights.bin');
-	console.log(__dirname + '/PasswordSecurity/passwordModel/0.1/weights.bin');
 });
 
 app.get('/passwordModelDistributionModel', (req, res, next) => {
@@ -43,9 +33,21 @@ app.get('/passwordModelDistributionModel', (req, res, next) => {
 });
 
 app.get('/passwordModelDistributionDict', (req, res, next) => {
-	const name = 'weights.bin';  
-	res.setHeader('Content-Disposition', `attachment; filename=${name}`);
-	res.sendFile(__dirname + '/weights.bin');
+	res.send("get /passwordModelDistributionDict")
+});
+
+app.post('/passwordDictUpdate', (req, res, next) => {
+	var query = req.body;
+	console.log(query);
+	
+	res.send("get /passwordDictUpdate");
+});
+
+app.post('/passwordModelParaUpdate', (req, res, next) => {
+	var query = req.body;
+	console.log(query);
+	
+	res.send("get /passwordModelParaUpdate");
 });
 
 app.listen(65001, () => {
