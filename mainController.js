@@ -22,17 +22,25 @@ app.get('/passwordModelDistributionWeight', (req, res, next) => {
 	const name = 'weights.bin';
 
 	res.setHeader('Content-Disposition', `attachment; filename=${name}`);
-	res.sendFile(__dirname + '/PasswordSecurity/passwordModel/0.1/weights.bin');
+	// res.sendFile(__dirname + `/PasswordSecurity/passwordModel/${req.query.versionData}/weights.bin`);
+
+	var pwd = new PasswordSecurityServer.PasswordSecurity.PasswordSecurity();
+	res.sendFile(pwd.passwordModelDistribution(req.query.versionData, req.query.comment) + `/weights.bin`);
 });
 
 app.get('/passwordModelDistributionModel', (req, res, next) => {
 	const name = 'model.json';
 
 	res.setHeader('Content-Disposition', `attachment; filename=${name}`);
-	res.sendFile(__dirname + '/PasswordSecurity/passwordModel/0.1/model.json');
+	// res.sendFile(__dirname + `/PasswordSecurity/passwordModel/${req.query.versionData}/model.json`);
+
+	var pwd = new PasswordSecurityServer.PasswordSecurity.PasswordSecurity();
+	res.sendFile(pwd.passwordModelDistribution(req.query.versionData, req.query.comment) + `/model.json`);
 });
 
 app.get('/passwordModelDistributionDict', (req, res, next) => {
+	console.log(req.query.versionData);
+	console.log(req.query.comment);
 	res.send("get /passwordModelDistributionDict")
 });
 

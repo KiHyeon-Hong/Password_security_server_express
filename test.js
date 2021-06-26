@@ -13,4 +13,8 @@ console.log(pwd.passwordModelVersion());
 console.log(pwd.getLog());
 */
 
-console.log(pwd.passwordModelDistribution());
+// console.log(pwd.passwordModelDistribution('0.1', 'comment'));
+
+// pwd.passwordModelTest();
+
+pwd.passwordModelTest();
