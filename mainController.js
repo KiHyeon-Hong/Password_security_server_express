@@ -41,6 +41,7 @@ app.get('/passwordModelDistributionModel', (req, res, next) => {
 app.get('/passwordModelDistributionDict', (req, res, next) => {
 	console.log(req.query.versionData);
 	console.log(req.query.comment);
+	
 	res.send("get /passwordModelDistributionDict")
 });
 
