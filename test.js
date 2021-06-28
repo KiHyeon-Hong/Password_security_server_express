@@ -20,3 +20,7 @@ console.log(pwd.getLog());
 // pwd.passwordModelTrain(0.2, "Test Training")
 
 // pwd.passwordModelTest("abcdefg");
+
+// console.log(pwd.passwordModelTrain('0.1', 'model test'));
+
+pwd.passwordModelTest();
