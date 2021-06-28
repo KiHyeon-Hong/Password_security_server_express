@@ -21,6 +21,10 @@ console.log(pwd.getLog());
 
 // pwd.passwordModelTest("abcdefg");
 
-// console.log(pwd.passwordModelTrain('0.1', 'model test'));
+// console.log(pwd.passwordModelTrain('0.3', 'model test'));
 
-pwd.passwordModelTest();
+// pwd.passwordModelTest();
+
+// pwd.passwordModelDelete('0.3');
+
+pwd.passwordModelDistribution('0.2', 'test code');
