@@ -1,30 +1,18 @@
 const PasswordSecurityServer = require('./PasswordSecurity');
-
+// const PasswordSecurityServer = require('@kihyeon-hong/password_security_server');
 var pwd = new PasswordSecurityServer.PasswordSecurity.PasswordSecurity();
-
-/*
-console.log(pwd.passwordModelTrain());
-console.log(pwd.passwordModelDistribution());
-console.log(pwd.passwordDictUpdate());
-console.log(pwd.passwordModelParaUpdate());
-console.log(pwd.passwordModelComment());
-console.log(pwd.passwordModelDelete());
-console.log(pwd.passwordModelVersion());
-console.log(pwd.getLog());
-*/
-
-// console.log(pwd.passwordModelDistribution('0.1', 'comment'));
-
-// pwd.passwordModelTest();
-
-// pwd.passwordModelTrain(0.2, "Test Training")
 
 // pwd.passwordModelTest("abcdefg");
 
-// console.log(pwd.passwordModelTrain('0.3', 'model test'));
+// console.log(pwd.passwordModelTrain('0.2', 'model test'));
 
 // pwd.passwordModelTest();
 
 // pwd.passwordModelDelete('0.3');
 
-pwd.passwordModelDistribution('0.2', 'test code');
+// pwd.passwordModelDistribution('0.2', 'test code');
+
+
+// pwd.passwordDictUpdate('q1w2e3r4', 'test comment!');
+
+console.log(pwd.passwordModelVersion('0.1'));

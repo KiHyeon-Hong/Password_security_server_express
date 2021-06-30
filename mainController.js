@@ -40,9 +40,9 @@ app.get('/passwordModelDistributionDict', (req, res, next) => {
 
 app.post('/passwordDictUpdate', (req, res, next) => {
 	var query = req.body;
-	console.log(query);
 	
 	var pwd = new PasswordSecurityServer.PasswordSecurity.PasswordSecurity();
+	pwd.passwordDictUpdate(query.dictionary, query.comment)
 
 	res.send("get /passwordDictUpdate");
 });
@@ -54,6 +54,10 @@ app.post('/passwordModelParaUpdate', (req, res, next) => {
 	pwd.passwordModelParaUpdate(query);
 
 	res.send("get /passwordModelParaUpdate");
+});
+
+app.get('/test', (req, res, next) => {
+	
 });
 
 app.listen(65001, () => {
