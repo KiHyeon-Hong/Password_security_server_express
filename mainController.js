@@ -3,8 +3,8 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const request = require('request');
 
-const PasswordSecurityServer = require('./PasswordSecurity');
-// const passwordSecurityServer = require('@kihyeon-hong/password_security_server');
+// const PasswordSecurityServer = require('./PasswordSecurity');
+const PasswordSecurityServer = require('@kihyeon-hong/password_security_server');
 
 const app = express();
 app.use(express.json())
@@ -40,20 +40,16 @@ app.get('/passwordModelDistributionDict', (req, res, next) => {
 
 app.post('/passwordDictUpdate', (req, res, next) => {
 	var query = req.body;
-	
 	var pwd = new PasswordSecurityServer.PasswordSecurity.PasswordSecurity();
-	pwd.passwordDictUpdate(query.dictionary, query.comment)
 
-	res.send("get /passwordDictUpdate");
+	res.send(pwd.passwordDictUpdate(query.dictionary, query.comment));
 });
 
 app.post('/passwordModelParaUpdate', (req, res, next) => {
 	var query = req.body;
-
 	var pwd = new PasswordSecurityServer.PasswordSecurity.PasswordSecurity();
-	pwd.passwordModelParaUpdate(query);
 
-	res.send("get /passwordModelParaUpdate");
+	res.send(pwd.passwordModelParaUpdate(query));
 });
 
 app.get('/test', (req, res, next) => {
