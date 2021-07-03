@@ -1,6 +1,5 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const cookieParser = require('cookie-parser');
 const request = require('request');
 
 // const PasswordSecurityServer = require('./PasswordSecurity');
@@ -30,10 +29,8 @@ app.get('/passwordModelDistributionModel', (req, res, next) => {
 });
 
 app.get('/passwordModelDistributionDict', (req, res, next) => {
-	console.log(req.query.versionData);
-	console.log(req.query.comment);
-
-	var pwd = new PasswordSecurityServer.PasswordSecurity.PasswordSecurity();
+	var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+	// console.log('IP : ' + ip);
 	
 	res.send("get /passwordModelDistributionDict")
 });
