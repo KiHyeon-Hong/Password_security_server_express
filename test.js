@@ -18,7 +18,7 @@ var pwd = new PasswordSecurityServer.PasswordSecurity.PasswordSecurity();
 // console.log(pwd.passwordModelDelete('0.2'));
 
 // 관리자 comment 변경
-// pwd.passwordModelComment('0.1', 'new comment');
+// console.log(pwd.passwordModelComment('0.1', 'new comment'));
 
 // 현재 예측모델 목록 확인
 // console.log(pwd.passwordModelVersion());
