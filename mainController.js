@@ -49,10 +49,6 @@ app.post('/passwordModelParaUpdate', (req, res, next) => {
 	res.send(pwd.passwordModelParaUpdate(query));
 });
 
-app.get('/test', (req, res, next) => {
-	
-});
-
 app.listen(65001, () => {
 	request.get(
 		{url:'https://api.ipify.org'},

@@ -4,7 +4,7 @@ const PasswordSecurityServer = require('@kihyeon-hong/password_security_server')
 var pwd = new PasswordSecurityServer.PasswordSecurity.PasswordSecurity();
 
 // 현재 예측모델 목록 확인
-// console.log(pwd.passwordModelVersion());
+console.log(pwd.passwordModelVersion());
 
 // 예측모델 학습
 // console.log(pwd.passwordModelTrain('0.1', 'model test'));
